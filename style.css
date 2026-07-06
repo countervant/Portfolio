@@ -29,6 +29,7 @@ body{
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   color:white;
+  height: 100vh;
 }
 .tabs {
   display: flex;
@@ -44,9 +45,8 @@ body{
   text-align: left;
   font-size: 25px;
   margin-left: 125px;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
 }
-
 .text-box {
   display: flex;
   flex-direction: column;
