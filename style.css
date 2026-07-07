@@ -103,8 +103,8 @@ background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(221, 0, 255, 1) 100
 }
 
 .Stack-box1, .Stack-box2, .Stack-box3, .Stack-box4, .Stack-box5, .Stack-box6, .Stack-box7, .Stack-box8, .Stack-box9, .Stack-box10, .Stack-box11, .Stack-box12 {
-  width: 150px;
-  height: 150px;
+  width: 175px;
+  height: 175px;
   border: 2px solid #ff00b3;
   border-radius: 10px;
   color: white;
@@ -112,14 +112,14 @@ background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(221, 0, 255, 1) 100
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  
+  gap: 10px
 }
 
-.Stack-row1, .Stack-row2 {
+.Stack-row1, .Stack-row2, .Stack-row3 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 125px;
+  gap: 100px;
   margin-top: 70px;
 
 }
