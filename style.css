@@ -102,7 +102,7 @@ background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(221, 0, 255, 1) 100
 
 }
 
-.Stack-box1, .Stack-box2, .Stack-box3, .Stack-box4, .Stack-box5, .Stack-box6, .Stack-box7, .Stack-box8, .Stack-box9, .Stack-box10, .Stack-box11, .Stack-box12 {
+.Stack-box1, .Stack-box2, .Stack-box3, .Stack-box4, .Stack-box5, .Stack-box6, .Stack-box7, .Stack-box8, .Stack-box9, .Stack-box10, .Stack-box11, .Stack-box12, .Stack-box13 {
   width: 175px;
   height: 175px;
   border: 2px solid #ff00b3;
