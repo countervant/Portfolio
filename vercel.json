@@ -1,0 +1,10 @@
+{
+  "framework": "vite",
+  "name": "peejay",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

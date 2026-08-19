@@ -1,0 +1,38 @@
+.footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-top: 1px solid var(--border-color);
+  padding-top: 2rem;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.scroll-top-btn {
+  position: absolute;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.scroll-top-btn:hover {
+  background-color: #f5f5f5;
+}

@@ -1,0 +1,7 @@
+.about-content p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+}
