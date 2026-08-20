@@ -16,14 +16,14 @@ const CloudSVG = ({ className }) => (
 const BackgroundClouds = () => {
   // Generate random properties once using useMemo to avoid re-calculating on re-renders
   const clouds = useMemo(() => {
-    return Array.from({ length: 8 }).map((_, i) => ({
+    return Array.from({ length: 15 }).map((_, i) => ({
       id: i,
       size: Math.random() * 80 + 60, // Size between 60px and 140px
-      opacity: Math.random() * 0.15 + 0.05, // Increased visibility: opacity between 0.05 and 0.20
+      opacity: Math.random() * 0.3 + 0.2, // Much higher visibility: 0.2 to 0.5
       top: `${Math.random() * 80 + 5}%`, // Vertical position (5% to 85%)
-      duration: Math.random() * 60 + 60, // Animation duration 60s to 120s (slow drift)
-      delay: Math.random() * -100, // Negative delay to stagger initial positions smoothly
-      direction: Math.random() > 0.5 ? 1 : -1, // 1 for left-to-right, -1 for right-to-left
+      duration: Math.random() * 60 + 60, // Animation duration 60s to 120s
+      delay: Math.random() * -100, // Stagger initial positions
+      direction: Math.random() > 0.5 ? 1 : -1, // Left or right
     }));
   }, []);
 
