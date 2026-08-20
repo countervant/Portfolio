@@ -24,13 +24,14 @@
 }
 
 .navbar-logo a {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 1.75rem;
-  letter-spacing: -0.05em;
-  color: var(--text-primary);
   display: flex;
   align-items: center;
+}
+
+.logo-img {
+  height: 40px; /* Adjust as necessary to look good */
+  width: auto;
+  object-fit: contain;
 }
 
 .navbar-links {
