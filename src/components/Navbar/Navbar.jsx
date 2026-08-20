@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import logoImg from '../../assets/LOGO.png';
+import logoImg from '../../assets/logo.png';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -32,11 +32,11 @@ const Navbar = () => {
             <img src={logoImg} alt="Peejay David Logo" className="logo-img" />
           </a>
         </div>
-        
+
         <div className={`navbar-links ${mobileMenuOpen ? 'active' : ''}`}>
           {navLinks.map((link) => (
-            <a 
-              key={link.name} 
+            <a
+              key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -45,8 +45,8 @@ const Navbar = () => {
           ))}
         </div>
 
-        <button 
-          className="mobile-menu-btn" 
+        <button
+          className="mobile-menu-btn"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >

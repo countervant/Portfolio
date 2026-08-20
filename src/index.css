@@ -3,8 +3,8 @@
 :root {
   --bg-color: #ffffff;
   --text-primary: #000000;
-  --text-secondary: #555555;
-  --text-muted: #888888;
+  --text-secondary: #000000;
+  --text-muted: #000000;
   
   --border-color: #e5e5e5;
   --border-radius-sm: 4px;

@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import './BackgroundClouds.css';
 
 const CloudSVG = ({ className }) => (
-  <svg 
-    className={className} 
-    viewBox="0 0 24 24" 
-    fill="currentColor" 
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path d="M17.5 19C19.9853 19 22 16.9853 22 14.5C22 12.1818 20.2527 10.2662 18.0016 10.021C17.5456 6.61869 14.6534 4 11.1429 4C7.79462 4 5.00693 6.43875 4.34114 9.64539C1.94218 10.2522 0 12.4414 0 15C0 17.7614 2.23858 20 5 20H17.5V19Z" />
@@ -19,7 +19,7 @@ const BackgroundClouds = () => {
     return Array.from({ length: 15 }).map((_, i) => ({
       id: i,
       size: Math.random() * 80 + 60, // Size between 60px and 140px
-      opacity: Math.random() * 0.3 + 0.2, // Much higher visibility: 0.2 to 0.5
+      opacity: Math.random() * 0.1 + 0.11, // Around 18% visibility: 0.13 to 0.23
       top: `${Math.random() * 80 + 5}%`, // Vertical position (5% to 85%)
       duration: Math.random() * 60 + 60, // Animation duration 60s to 120s
       delay: Math.random() * -100, // Stagger initial positions
