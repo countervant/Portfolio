@@ -43,14 +43,8 @@ jobs:
       - name: Deploy to S3
         run: aws s3 sync dist/ s3://peejaydavid.dev --delete
 
-      - name: Verify AWS identity
-        run: aws sts get-caller-identity
-
-      - name: Verify CloudFront distribution
-        run: aws cloudfront get-distribution --id E59MLXQVFR5F1
-
       - name: Invalidate CloudFront cache
         run: |
           aws cloudfront create-invalidation \
-            --distribution-id E59MLXQVFR5F1\
+            --distribution-id E59MLXQVFR5F1 \
             --paths "/*"
