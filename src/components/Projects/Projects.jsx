@@ -40,8 +40,11 @@ const Projects = () => {
         {filteredProjects.map((project) => (
           <div className="project-item" key={project.id}>
             <div className="project-img-placeholder">
-              {/* <img src={`/images/projects/${project.id}.jpg`} alt={project.title} /> */}
-              <BsImage size={32} />
+              {project.image ? (
+                <img src={project.image} alt={project.title} className="project-img" />
+              ) : (
+                <BsImage size={32} />
+              )}
             </div>
             
             <div className="project-content">

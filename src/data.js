@@ -1,3 +1,5 @@
+import project1Img from './assets/project1.png';
+
 export const personalInfo = {
   name: "Peejay David",
   role: "aspiring cloud engineer",
@@ -60,10 +62,10 @@ export const certifications = [
 export const projects = [
   {
     id: 1,
-    title: "AWS Static Website Hosting",
+    title: "AWS Static Portfolio Deployment",
     subtitle: "static site deployment",
-    techStack: "AWS S3, Route 53",
-    image: "/images/project-1-placeholder.jpg",
+    techStack: "Amazon S3, Amazon CloudFront, AWS Certificate Manager (ACM), Name.com DNS, GitHub Actions (CI/CD)",
+    image: project1Img,
     link: "#",
     category: "Cloud"
   },
@@ -72,7 +74,7 @@ export const projects = [
     title: "Cloud Architecture Design",
     subtitle: "high availability aws setup",
     techStack: "EC2, ALB, RDS",
-    image: "/images/project-2-placeholder.jpg",
+    image: null,
     link: "#",
     category: "Cloud"
   },
@@ -81,7 +83,7 @@ export const projects = [
     title: "Serverless Application",
     subtitle: "lambda-based workflow",
     techStack: "Lambda, API Gateway",
-    image: "/images/project-3-placeholder.jpg",
+    image: null,
     link: "#",
     category: "Cloud"
   },
@@ -90,7 +92,7 @@ export const projects = [
     title: "Brand Identity Design",
     subtitle: "logo and brand guidelines",
     techStack: "Illustrator, Photoshop",
-    image: "/images/gd-1-placeholder.jpg",
+    image: null,
     link: "#",
     category: "Graphic Design"
   },
@@ -99,7 +101,7 @@ export const projects = [
     title: "Social Media Campaign",
     subtitle: "marketing visual assets",
     techStack: "Figma, Photoshop",
-    image: "/images/gd-2-placeholder.jpg",
+    image: null,
     link: "#",
     category: "Graphic Design"
   },
@@ -108,7 +110,7 @@ export const projects = [
     title: "UI/UX Mockups",
     subtitle: "web app interface design",
     techStack: "Figma",
-    image: "/images/gd-3-placeholder.jpg",
+    image: null,
     link: "#",
     category: "Graphic Design"
   },
@@ -117,7 +119,7 @@ export const projects = [
     title: "Print Brochure",
     subtitle: "event promotional material",
     techStack: "InDesign, Illustrator",
-    image: "/images/gd-4-placeholder.jpg",
+    image: null,
     link: "#",
     category: "Graphic Design"
   },
@@ -126,7 +128,7 @@ export const projects = [
     title: "Poster Design",
     subtitle: "typographic poster series",
     techStack: "Photoshop, Illustrator",
-    image: "/images/gd-5-placeholder.jpg",
+    image: null,
     link: "#",
     category: "Graphic Design"
   },
@@ -135,7 +137,7 @@ export const projects = [
     title: "Packaging Design",
     subtitle: "product box concepts",
     techStack: "Illustrator, Dimension",
-    image: "/images/gd-6-placeholder.jpg",
+    image: null,
     link: "#",
     category: "Graphic Design"
   }
