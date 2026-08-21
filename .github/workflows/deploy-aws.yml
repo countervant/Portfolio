@@ -40,8 +40,14 @@ jobs:
           role-to-assume: arn:aws:iam::400294418943:role/GitHubActions-Portfolio-Deploy
           aws-region: us-east-1
 
-      - name: Deploy to S3
+       - name: Deploy to S3
         run: aws s3 sync dist/ s3://peejaydavid.dev --delete
+
+      - name: Verify AWS identity
+        run: aws sts get-caller-identity
+
+      - name: Verify CloudFront distribution
+        run: aws cloudfront get-distribution --id E59MLXQVR5F1
 
       - name: Invalidate CloudFront cache
         run: |
