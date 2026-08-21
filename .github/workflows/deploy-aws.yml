@@ -47,7 +47,7 @@ jobs:
         run: aws sts get-caller-identity
 
       - name: Verify CloudFront distribution
-        run: aws cloudfront get-distribution --id E59MLXQVR5F1
+        run: aws cloudfront get-distribution --id E59MLXQVFR5F1
 
       - name: Invalidate CloudFront cache
         run: |
