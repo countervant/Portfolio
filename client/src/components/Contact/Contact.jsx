@@ -90,10 +90,9 @@ const Contact = () => {
     setFeedback({ type: null, message: '' });
 
     try {
-      const apiBase = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
-      const endpoint = `${apiBase}/api/contact`;
+      const API_BASE = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
 
-      const response = await fetch(endpoint, {
+      const response = await fetch(`${API_BASE}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
