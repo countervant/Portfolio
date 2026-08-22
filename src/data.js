@@ -1,4 +1,5 @@
 import project1Img from './assets/project1.png';
+import project2Img from './assets/project2.png';
 
 export const personalInfo = {
   name: "Peejay David",
@@ -71,10 +72,10 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Cloud Architecture Design",
-    subtitle: "high availability aws setup",
-    techStack: "EC2, ALB, RDS",
-    image: null,
+    title: "AWS Cloud Cost Intelligence & FinOps Guardrail Dashboard",
+    subtitle: "Real-time AWS spend observability, interactive what-if workload forecasting, and automated email guardrails to eliminate cloud bill shock.",
+    techStack: "AWS SDK v3, AWS Cost Explorer, CloudWatch, Amazon SNS",
+    image: project2Img,
     link: "#",
     category: "Cloud"
   },
