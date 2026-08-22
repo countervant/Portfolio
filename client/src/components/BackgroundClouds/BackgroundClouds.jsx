@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import './BackgroundClouds.css';
 
@@ -13,24 +13,27 @@ const CloudSVG = ({ className }) => (
   </svg>
 );
 
-const BackgroundClouds = () => {
-  // Generate random properties once using useMemo to avoid re-calculating on re-renders
-  const clouds = useMemo(() => {
-    return Array.from({ length: 15 }).map((_, i) => ({
-      id: i,
-      size: Math.random() * 80 + 60, // Size between 60px and 140px
-      opacity: Math.random() * 0.1 + 0.11, // Around 18% visibility: 0.13 to 0.23
-      top: `${Math.random() * 80 + 5}%`, // Vertical position (5% to 85%)
-      duration: Math.random() * 60 + 60, // Animation duration 60s to 120s
-      delay: Math.random() * -100, // Stagger initial positions
-      direction: Math.random() > 0.5 ? 1 : -1, // Left or right
-    }));
-  }, []);
+// Pre-computed cloud positioning to maintain purity and avoid re-render recalculations
+const CLOUDS = Array.from({ length: 15 }).map((_, i) => {
+  const s1 = ((i * 9301 + 49297) % 233280) / 233280;
+  const s2 = ((i * 49297 + 9301) % 233280) / 233280;
+  const s3 = ((i * 12345 + 67891) % 233280) / 233280;
+  const s4 = ((i * 54321 + 19876) % 233280) / 233280;
+  return {
+    id: i,
+    size: s1 * 80 + 60,
+    opacity: s2 * 0.1 + 0.11,
+    top: `${s3 * 80 + 5}%`,
+    duration: s4 * 60 + 60,
+    delay: s1 * -100,
+    direction: i % 2 === 0 ? 1 : -1,
+  };
+});
 
+const BackgroundClouds = () => {
   return (
     <div className="background-clouds-container">
-      {clouds.map((cloud) => {
-        // We animate across slightly more than the viewport width to ensure they fully exit
+      {CLOUDS.map((cloud) => {
         const startX = cloud.direction === 1 ? '-20vw' : '120vw';
         const endX = cloud.direction === 1 ? '120vw' : '-20vw';
 
@@ -49,7 +52,7 @@ const BackgroundClouds = () => {
             transition={{
               duration: cloud.duration,
               repeat: Infinity,
-              ease: "linear",
+              ease: 'linear',
               delay: cloud.delay,
             }}
           >

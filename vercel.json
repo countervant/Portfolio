@@ -1,6 +1,8 @@
 {
   "framework": "vite",
   "name": "peejay",
+  "buildCommand": "npm run build",
+  "outputDirectory": "client/dist",
   "rewrites": [
     {
       "source": "/(.*)",

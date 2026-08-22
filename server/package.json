@@ -1,0 +1,26 @@
+{
+  "name": "portfolio-server",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "build": "esbuild lambda.js --bundle --platform=node --target=node24 --format=cjs --outfile=dist/index.cjs",
+    "test": "node tests/contact.test.js"
+  },
+  "dependencies": {
+    "@codegenie/serverless-express": "^5.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.3.0",
+    "nodemailer": "^9.0.5",
+    "resend": "^4.8.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

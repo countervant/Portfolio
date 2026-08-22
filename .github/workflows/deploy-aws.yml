@@ -41,7 +41,7 @@ jobs:
           aws-region: us-east-1
 
       - name: Deploy to S3
-        run: aws s3 sync dist/ s3://peejaydavid.dev --delete
+        run: aws s3 sync client/dist/ s3://peejaydavid.dev --delete
 
       - name: Invalidate CloudFront cache
         run: |

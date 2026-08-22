@@ -14,7 +14,7 @@ const Journey = () => {
             <h2 className="section-title text-left">Experience & Learning</h2>
             
             <div className="timeline">
-              {journey.map((item, index) => (
+              {journey.map((item) => (
                 <div key={item.id} className="timeline-item">
                   <div className="timeline-dot"></div>
                   <div className="timeline-content card">
