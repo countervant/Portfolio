@@ -63,9 +63,9 @@ export const certifications = [
 export const projects = [
   {
     id: 1,
-    title: "AWS Static Portfolio Deployment",
-    subtitle: "static site deployment",
-    techStack: "Amazon S3, Amazon CloudFront, AWS Certificate Manager (ACM), Name.com DNS, GitHub Actions (CI/CD)",
+    title: "AWS Cloud Portfolio Deployment",
+    subtitle: "Static Site Hosting & Serverless Backend",
+    techStack: "Amazon S3, Amazon CloudFront, AWS Lambda, AWS Certificate Manager (ACM), Resend API, Name.com DNS, GitHub Actions (CI/CD)",
     image: project1Img,
     link: "#",
     category: "Cloud"
