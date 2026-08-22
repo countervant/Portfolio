@@ -6,10 +6,11 @@
 
 .skill-card {
   background-color: var(--bg-color);
-  border: 1px solid var(--border-color);
+  border: 1px solid black;
   border-radius: var(--border-radius-sm);
   padding: 2rem 1.5rem;
 }
+
 
 .skill-card-title {
   display: flex;
@@ -46,5 +47,9 @@
 @media (max-width: 768px) {
   .skills-grid {
     grid-template-columns: 1fr;
+  }
+
+  .skill-card {
+    border-color: white;
   }
 }
