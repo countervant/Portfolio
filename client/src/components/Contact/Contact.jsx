@@ -147,22 +147,32 @@ const Contact = () => {
               <FiMail size={16} /> {personalInfo.contact.email}
             </a>
             <a
-              href={personalInfo.contact.linkedin}
+              href={
+                personalInfo.contact.linkedin.startsWith('http')
+                  ? personalInfo.contact.linkedin
+                  : `https://${personalInfo.contact.linkedin}`
+              }
               target="_blank"
               rel="noreferrer"
               className="contact-info-item"
               aria-label="LinkedIn profile"
             >
-              <FiLinkedin size={16} /> linkedin.com/in/yourprofile
+              <FiLinkedin size={16} />{' '}
+              {personalInfo.contact.linkedin.replace(/^https?:\/\/(www\.)?/, '')}
             </a>
             <a
-              href={personalInfo.contact.github}
+              href={
+                personalInfo.contact.github.startsWith('http')
+                  ? personalInfo.contact.github
+                  : `https://${personalInfo.contact.github}`
+              }
               target="_blank"
               rel="noreferrer"
               className="contact-info-item"
               aria-label="GitHub profile"
             >
-              <FiGithub size={16} /> github.com/yourusername
+              <FiGithub size={16} />{' '}
+              {personalInfo.contact.github.replace(/^https?:\/\/(www\.)?/, '')}
             </a>
           </div>
         </div>

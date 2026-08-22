@@ -9,8 +9,8 @@ export const personalInfo = {
   aboutMe: "I’m an aspiring cloud engineer interested in AWS, cloud infrastructure, automation, and scalable systems. I enjoy learning through hands-on labs and personal projects, and I’m building my skills in cloud technologies, Linux, networking, and DevOps tools.",
   contact: {
     email: "davidpeejay@gmail.com",
-    linkedin: "linkedin",
-    github: "github"
+    linkedin: "https://www.linkedin.com/in/peejay-david",
+    github: "https://github.com/countervant"
   },
   resumeUrl: "#"
 };

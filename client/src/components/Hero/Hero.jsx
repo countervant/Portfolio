@@ -27,10 +27,28 @@ const Hero = () => {
         </div>
 
         <div className="hero-socials">
-          <a href={personalInfo.contact.github} target="_blank" rel="noreferrer" aria-label="GitHub">
+          <a
+            href={
+              personalInfo.contact.github.startsWith('http')
+                ? personalInfo.contact.github
+                : `https://${personalInfo.contact.github}`
+            }
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+          >
             <FaGithub size={20} />
           </a>
-          <a href={personalInfo.contact.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <a
+            href={
+              personalInfo.contact.linkedin.startsWith('http')
+                ? personalInfo.contact.linkedin
+                : `https://${personalInfo.contact.linkedin}`
+            }
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+          >
             <FaLinkedin size={20} />
           </a>
           <a href={`mailto:${personalInfo.contact.email}`} aria-label="Email">

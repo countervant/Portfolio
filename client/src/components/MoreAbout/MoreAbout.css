@@ -1,0 +1,251 @@
+.more-about-container {
+  padding-top: 5rem;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* Top Hero Section */
+.more-about-hero {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.more-about-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.more-about-label-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.more-about-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.more-about-label-line {
+  width: 36px;
+  height: 2px;
+  background-color: #000000;
+  margin-top: 6px;
+  margin-bottom: 1.75rem;
+}
+
+.more-about-main-title {
+  font-size: clamp(2.5rem, 4.5vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: #000000;
+  margin-bottom: 2rem;
+}
+
+.more-about-paragraphs p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+}
+
+.back-home-btn {
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.9rem;
+}
+
+/* Image Column & Card */
+.more-about-image-column {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.more-about-image-card {
+  background: transparent;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.more-about-portrait {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  max-height: 440px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Info Badge (Positioned below image, no overlap) */
+.more-about-info-badge {
+  width: 100%;
+  background: #ffffff;
+  padding: 1.25rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #eef0f2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  z-index: 2;
+}
+
+.info-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #111827;
+}
+
+.badge-icon {
+  color: #111827;
+  flex-shrink: 0;
+}
+
+/* Divider */
+.more-about-section-divider {
+  height: 1px;
+  background-color: #eaeaea;
+  width: 100%;
+  margin: 3.5rem 0;
+}
+
+/* Section Layout (What I Do / Tools & Foundations) */
+.more-about-section {
+  padding: 1rem 0;
+}
+
+.more-about-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3.5rem;
+  align-items: flex-start;
+}
+
+.more-about-header-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.more-about-section-lead {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #222222;
+  max-width: 250px;
+}
+
+/* Cards Grid */
+.more-about-cards-col {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.cards-3-col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.more-about-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  margin-bottom: 1.25rem;
+  color: #111827;
+}
+
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #4b5563;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .more-about-hero-grid {
+    gap: 2.5rem;
+  }
+  
+  .more-about-layout {
+    grid-template-columns: 220px 1fr;
+    gap: 2.5rem;
+  }
+  
+  .cards-3-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .more-about-container {
+    padding-top: 4rem;
+  }
+  
+  .more-about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .more-about-image-column {
+    margin: 0 auto;
+    max-width: 360px;
+  }
+  
+  .more-about-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .more-about-section-lead {
+    max-width: 100%;
+  }
+  
+  .cards-3-col {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .more-about-section-divider {
+    margin: 2.5rem 0;
+  }
+}

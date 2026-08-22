@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css';
 
-const About = () => {
+const About = ({ onMoreAboutClick }) => {
   return (
     <section id="about" className="section container reveal">
       <div className="divider" style={{ marginBottom: '4rem' }}></div>
@@ -20,7 +20,13 @@ const About = () => {
           <p>
             I'm continuously developing my skills through hands-on projects, labs, and real-world practice.
           </p>
-          <button className="btn btn-outline" style={{ marginTop: '1.5rem' }}>More About Me</button>
+          <button
+            className="btn btn-outline"
+            style={{ marginTop: '1.5rem' }}
+            onClick={onMoreAboutClick}
+          >
+            More About Me
+          </button>
         </div>
       </div>
     </section>
