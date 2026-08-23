@@ -1,18 +1,11 @@
-import project1Img from './assets/project1.png';
-import project2Img from './assets/project2.png';
-
 export const personalInfo = {
   name: "Peejay David",
   role: "aspiring cloud engineer",
-  subtitle: "focused on AWS cloud, cloud infrastructure, and building modern cloud-based solutions.",
-  shortIntro: "I’m an aspiring cloud engineer focused on AWS cloud technologies, hands-on projects, and building a strong foundation in infrastructure, networking, automation, and DevOps.",
-  aboutMe: "I’m an aspiring cloud engineer interested in AWS, cloud infrastructure, automation, and scalable systems. I enjoy learning through hands-on labs and personal projects, and I’m building my skills in cloud technologies, Linux, networking, and DevOps tools.",
   contact: {
     email: "davidpeejay@gmail.com",
     linkedin: "https://www.linkedin.com/in/peejay-david",
     github: "https://github.com/countervant"
-  },
-  resumeUrl: "#"
+  }
 };
 
 export const skills = {
@@ -66,8 +59,8 @@ export const projects = [
     title: "AWS Cloud Portfolio Deployment",
     subtitle: "Static Site Hosting & Serverless Backend",
     techStack: "Amazon S3, Amazon CloudFront, AWS Lambda, AWS Certificate Manager (ACM), Resend API, Name.com DNS, GitHub Actions (CI/CD)",
-    image: project1Img,
-    link: "#",
+    image: "/images/project-aws-960.v1.webp",
+    imageSrcSet: "/images/project-aws-480.v1.webp 480w, /images/project-aws-960.v1.webp 960w",
     category: "Cloud"
   },
   {
@@ -75,8 +68,8 @@ export const projects = [
     title: "AWS Cloud Cost Intelligence & FinOps Guardrail Dashboard",
     subtitle: "Real-time AWS spend observability, interactive what-if workload forecasting, and automated email guardrails to eliminate cloud bill shock.",
     techStack: "AWS SDK v3, AWS Cost Explorer, CloudWatch, Amazon SNS",
-    image: project2Img,
-    link: "#",
+    image: "/images/project-finops-960.v1.webp",
+    imageSrcSet: "/images/project-finops-480.v1.webp 480w, /images/project-finops-960.v1.webp 960w",
     category: "Cloud"
   },
   {
@@ -85,7 +78,6 @@ export const projects = [
     subtitle: "lambda-based workflow",
     techStack: "Lambda, API Gateway",
     image: null,
-    link: "#",
     category: "Cloud"
   },
   {
@@ -94,7 +86,6 @@ export const projects = [
     subtitle: "logo and brand guidelines",
     techStack: "Illustrator, Photoshop",
     image: null,
-    link: "#",
     category: "Graphic Design"
   },
   {
@@ -103,7 +94,6 @@ export const projects = [
     subtitle: "marketing visual assets",
     techStack: "Figma, Photoshop",
     image: null,
-    link: "#",
     category: "Graphic Design"
   },
   {
@@ -112,7 +102,6 @@ export const projects = [
     subtitle: "web app interface design",
     techStack: "Figma",
     image: null,
-    link: "#",
     category: "Graphic Design"
   },
   {
@@ -121,7 +110,6 @@ export const projects = [
     subtitle: "event promotional material",
     techStack: "InDesign, Illustrator",
     image: null,
-    link: "#",
     category: "Graphic Design"
   },
   {
@@ -130,7 +118,6 @@ export const projects = [
     subtitle: "typographic poster series",
     techStack: "Photoshop, Illustrator",
     image: null,
-    link: "#",
     category: "Graphic Design"
   },
   {
@@ -139,16 +126,6 @@ export const projects = [
     subtitle: "product box concepts",
     techStack: "Illustrator, Dimension",
     image: null,
-    link: "#",
     category: "Graphic Design"
   }
-];
-
-export const focusData = [
-  "AWS Cloud",
-  "Cloud Infrastructure",
-  "Cloud Security",
-  "Automation",
-  "DevOps",
-  "Infrastructure as Code"
 ];

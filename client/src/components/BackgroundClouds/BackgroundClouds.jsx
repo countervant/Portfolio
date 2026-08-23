@@ -1,5 +1,3 @@
-import React from 'react';
-import { motion } from 'framer-motion';
 import './BackgroundClouds.css';
 
 const CloudSVG = ({ className }) => (
@@ -14,7 +12,7 @@ const CloudSVG = ({ className }) => (
 );
 
 // Pre-computed cloud positioning to maintain purity and avoid re-render recalculations
-const CLOUDS = Array.from({ length: 15 }).map((_, i) => {
+const CLOUDS = Array.from({ length: 8 }).map((_, i) => {
   const s1 = ((i * 9301 + 49297) % 233280) / 233280;
   const s2 = ((i * 49297 + 9301) % 233280) / 233280;
   const s3 = ((i * 12345 + 67891) % 233280) / 233280;
@@ -32,13 +30,13 @@ const CLOUDS = Array.from({ length: 15 }).map((_, i) => {
 
 const BackgroundClouds = () => {
   return (
-    <div className="background-clouds-container">
+    <div className="background-clouds-container" aria-hidden="true">
       {CLOUDS.map((cloud) => {
         const startX = cloud.direction === 1 ? '-20vw' : '120vw';
         const endX = cloud.direction === 1 ? '120vw' : '-20vw';
 
         return (
-          <motion.div
+          <div
             key={cloud.id}
             className="cloud-wrapper"
             style={{
@@ -46,18 +44,14 @@ const BackgroundClouds = () => {
               width: cloud.size,
               height: cloud.size,
               opacity: cloud.opacity,
-            }}
-            initial={{ x: startX }}
-            animate={{ x: endX }}
-            transition={{
-              duration: cloud.duration,
-              repeat: Infinity,
-              ease: 'linear',
-              delay: cloud.delay,
+              '--cloud-start': startX,
+              '--cloud-end': endX,
+              '--cloud-duration': `${cloud.duration}s`,
+              '--cloud-delay': `${cloud.delay}s`,
             }}
           >
             <CloudSVG className="cloud-svg" />
-          </motion.div>
+          </div>
         );
       })}
     </div>

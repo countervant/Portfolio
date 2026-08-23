@@ -1,4 +1,3 @@
-import React from 'react';
 import { skills } from '../../data';
 import { FiCloud, FiServer, FiCode, FiPenTool } from 'react-icons/fi';
 import './Skills.css';

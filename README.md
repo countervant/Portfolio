@@ -9,9 +9,8 @@ A modern, responsive personal portfolio built with a decoupled architecture feat
 ```text
 portfolio/
 ├── client/                     # Frontend Application (React + Vite)
-│   ├── public/                 # Static public assets (favicons, logos)
+│   ├── public/                 # Optimized responsive images and favicon
 │   ├── src/                    # React source code
-│   │   ├── assets/             # Images, project screenshots
 │   │   ├── components/         # Modular UI components (Hero, About, Projects, Contact, etc.)
 │   │   ├── App.jsx             # Main application component
 │   │   ├── data.js             # Content and project data

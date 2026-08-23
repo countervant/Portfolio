@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { lazy, Suspense, useState, useEffect } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
@@ -8,7 +8,8 @@ import Certifications from './components/Certifications/Certifications';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import BackgroundClouds from './components/BackgroundClouds/BackgroundClouds';
-import MoreAbout from './components/MoreAbout/MoreAbout';
+
+const MoreAbout = lazy(() => import('./components/MoreAbout/MoreAbout'));
 
 function App() {
   const [currentView, setCurrentView] = useState(() => {
@@ -86,7 +87,9 @@ function App() {
       <Navbar currentView={currentView} onNavigate={handleNavigate} />
       <main>
         {currentView === 'more-about' ? (
-          <MoreAbout onBack={() => handleNavigate('home', '#about')} />
+          <Suspense fallback={<div className="route-loading" aria-live="polite">Loading…</div>}>
+            <MoreAbout onBack={() => handleNavigate('home', '#about')} />
+          </Suspense>
         ) : (
           <>
             <Hero />

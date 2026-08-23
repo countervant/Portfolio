@@ -42,8 +42,33 @@ jobs:
           role-to-assume: arn:aws:iam::400294418943:role/GitHubActions-Portfolio-Deploy
           aws-region: us-east-1
 
-      - name: Deploy to S3
-        run: aws s3 sync client/dist/ s3://peejaydavid.dev --delete
+      - name: Deploy HTML and root files to S3
+        run: |
+          aws s3 sync client/dist/ s3://peejaydavid.dev \
+            --delete \
+            --exclude "index.html" \
+            --exclude "assets/*" \
+            --exclude "images/*" \
+            --exclude "favicon.png" \
+            --cache-control "public,max-age=0,must-revalidate"
+
+          aws s3 cp client/dist/index.html s3://peejaydavid.dev/index.html \
+            --content-type "text/html; charset=utf-8" \
+            --cache-control "public,max-age=0,must-revalidate"
+
+          aws s3 cp client/dist/favicon.png s3://peejaydavid.dev/favicon.png \
+            --content-type "image/png" \
+            --cache-control "public,max-age=86400"
+
+      - name: Deploy immutable assets to S3
+        run: |
+          aws s3 sync client/dist/assets/ s3://peejaydavid.dev/assets/ \
+            --delete \
+            --cache-control "public,max-age=31536000,immutable"
+
+          aws s3 sync client/dist/images/ s3://peejaydavid.dev/images/ \
+            --delete \
+            --cache-control "public,max-age=31536000,immutable"
 
       - name: Invalidate CloudFront cache
         run: |

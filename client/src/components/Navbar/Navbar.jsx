@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import logoImg from '../../assets/logo.png';
 import './Navbar.css';
 
 const Navbar = ({ currentView = 'home', onNavigate }) => {
@@ -11,7 +10,8 @@ const Navbar = ({ currentView = 'home', onNavigate }) => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -53,7 +53,14 @@ const Navbar = ({ currentView = 'home', onNavigate }) => {
       <nav className="navbar container">
         <div className="navbar-logo">
           <a href="#home" onClick={handleLogoClick}>
-            <img src={logoImg} alt="Peejay David Logo" className="logo-img" />
+            <img
+              src="/images/logo.v1.webp"
+              alt="Peejay David"
+              className="logo-img"
+              width="238"
+              height="160"
+              decoding="async"
+            />
           </a>
         </div>
 

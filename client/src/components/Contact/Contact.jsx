@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { personalInfo } from '../../data';
 import {
   FiMail,
@@ -22,7 +22,7 @@ const INITIAL_FORM_STATE = {
 
 const Contact = () => {
   const [formData, setFormData] = useState(INITIAL_FORM_STATE);
-  const [status, setStatus] = useState('idle'); // 'idle' | 'loading' | 'success' | 'error'
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [feedback, setFeedback] = useState({ type: null, message: '' });
   const [fieldErrors, setFieldErrors] = useState({});
 
@@ -86,7 +86,7 @@ const Contact = () => {
       return;
     }
 
-    setStatus('loading');
+    setIsSubmitting(true);
     setFeedback({ type: null, message: '' });
 
     try {
@@ -111,7 +111,6 @@ const Contact = () => {
         );
       }
 
-      setStatus('success');
       setFeedback({
         type: 'success',
         message: data.message || 'Thank you! Your message has been sent successfully.',
@@ -120,13 +119,14 @@ const Contact = () => {
       setFieldErrors({});
     } catch (err) {
       console.error('[Contact Form Error]', err);
-      setStatus('error');
       setFeedback({
         type: 'error',
         message:
           err.message ||
           'Failed to send message. Please check your connection or email me directly.',
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -229,7 +229,7 @@ const Contact = () => {
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={handleChange}
-                  disabled={status === 'loading'}
+                  disabled={isSubmitting}
                   className={fieldErrors.name ? 'input-error' : ''}
                   aria-invalid={!!fieldErrors.name}
                   required
@@ -247,7 +247,7 @@ const Contact = () => {
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={handleChange}
-                  disabled={status === 'loading'}
+                  disabled={isSubmitting}
                   className={fieldErrors.email ? 'input-error' : ''}
                   aria-invalid={!!fieldErrors.email}
                   required
@@ -266,7 +266,7 @@ const Contact = () => {
                 placeholder="Subject"
                 value={formData.subject}
                 onChange={handleChange}
-                disabled={status === 'loading'}
+                disabled={isSubmitting}
                 className={fieldErrors.subject ? 'input-error' : ''}
                 aria-invalid={!!fieldErrors.subject}
                 required
@@ -284,7 +284,7 @@ const Contact = () => {
                 rows="5"
                 value={formData.message}
                 onChange={handleChange}
-                disabled={status === 'loading'}
+                disabled={isSubmitting}
                 className={fieldErrors.message ? 'input-error' : ''}
                 aria-invalid={!!fieldErrors.message}
                 required
@@ -296,10 +296,10 @@ const Contact = () => {
 
             <button
               type="submit"
-              className={`btn btn-primary submit-btn ${status === 'loading' ? 'btn-loading' : ''}`}
-              disabled={status === 'loading'}
+              className={`btn btn-primary submit-btn ${isSubmitting ? 'btn-loading' : ''}`}
+              disabled={isSubmitting}
             >
-              {status === 'loading' ? (
+              {isSubmitting ? (
                 <>
                   <FiLoader className="btn-spinner" size={16} />
                   <span>Sending...</span>

@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Cloud, Palette, Sparkles, Network, SquareTerminal, MapPin, Mail, Calendar, ArrowLeft } from 'lucide-react';
-import profileImg from '../../assets/me.png';
 import { personalInfo } from '../../data';
 import './MoreAbout.css';
 
@@ -49,9 +48,14 @@ const MoreAbout = ({ onBack }) => {
           <div className="more-about-image-column">
             <div className="more-about-image-card">
               <img
-                src={profileImg}
+                src="/images/profile-800.v1.webp"
+                srcSet="/images/profile-400.v1.webp 400w, /images/profile-800.v1.webp 800w"
+                sizes="(max-width: 768px) 90vw, 380px"
+                width="800"
+                height="836"
                 alt={personalInfo.name}
                 className="more-about-portrait"
+                decoding="async"
               />
             </div>
 

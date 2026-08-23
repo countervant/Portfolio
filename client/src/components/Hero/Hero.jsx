@@ -1,12 +1,16 @@
-import React from 'react';
 import { personalInfo } from '../../data';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-import profileImg from '../../assets/me.png';
 import './Hero.css';
+
+const profileSrc = '/images/profile-800.v1.webp';
+const profileSrcSet = [
+  '/images/profile-400.v1.webp 400w',
+  '/images/profile-800.v1.webp 800w',
+].join(', ');
 
 const Hero = () => {
   return (
-    <section id="home" className="section hero container reveal">
+    <section id="home" className="section hero container">
       <div className="hero-content">
         <p className="hero-greeting">Hi, I'm</p>
         <h1 className="hero-title">
@@ -58,25 +62,21 @@ const Hero = () => {
       </div>
 
       <div className="hero-image-wrapper">
-        <div className="hero-image-container">
-          {/* Desktop View (Plain Photo) */}
-          <div className="hero-image desktop-only">
-            <img src={profileImg} alt={personalInfo.name} />
-          </div>
-
-          {/* Mobile View (Circular Wrappers) */}
-          <div className="mobile-only">
-            <div className="decorative-dots"></div>
-            <div className="hero-image-outer-circle">
-              <div className="hero-image-inner-circle">
-                <div className="hero-image-circular">
-                  <img src={profileImg} alt={personalInfo.name} />
-                </div>
-              </div>
-              <div className="accent-dot"></div>
-            </div>
-          </div>
+        <div className="decorative-dots" aria-hidden="true"></div>
+        <div className="hero-image-frame">
+          <img
+            className="hero-profile-image"
+            src={profileSrc}
+            srcSet={profileSrcSet}
+            sizes="(max-width: 992px) 220px, 400px"
+            width="800"
+            height="836"
+            alt={`${personalInfo.name}, aspiring cloud engineer`}
+            fetchPriority="high"
+            decoding="async"
+          />
         </div>
+        <div className="accent-dot" aria-hidden="true"></div>
       </div>
     </section>
   );

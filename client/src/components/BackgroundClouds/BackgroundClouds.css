@@ -12,8 +12,8 @@
 
 .cloud-wrapper {
   position: absolute;
-  /* will-change optimizes animations to run on the GPU, preventing layout thrashing */
   will-change: transform;
+  animation: cloud-drift var(--cloud-duration) linear var(--cloud-delay) infinite;
   color: var(--text-primary);
   display: flex;
   align-items: center;
@@ -23,4 +23,22 @@
 .cloud-svg {
   width: 100%;
   height: 100%;
+}
+
+@keyframes cloud-drift {
+  from {
+    transform: translate3d(var(--cloud-start), 0, 0);
+  }
+
+  to {
+    transform: translate3d(var(--cloud-end), 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cloud-wrapper {
+    animation: none;
+    transform: translate3d(40vw, 0, 0);
+    will-change: auto;
+  }
 }

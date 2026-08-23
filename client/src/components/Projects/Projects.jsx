@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { projects } from '../../data';
-import { FiExternalLink } from 'react-icons/fi';
 import { BsImage } from 'react-icons/bs';
 import './Projects.css';
 
@@ -41,7 +40,17 @@ const Projects = () => {
           <div className="project-item" key={project.id}>
             <div className="project-img-placeholder">
               {project.image ? (
-                <img src={project.image} alt={project.title} className="project-img" />
+                <img
+                  src={project.image}
+                  srcSet={project.imageSrcSet}
+                  sizes="(max-width: 768px) 90vw, (max-width: 992px) 45vw, 380px"
+                  width="960"
+                  height="426"
+                  alt={project.title}
+                  className="project-img"
+                  loading="lazy"
+                  decoding="async"
+                />
               ) : (
                 <BsImage size={32} />
               )}
@@ -53,11 +62,6 @@ const Projects = () => {
               
               <div className="project-footer">
                 <span className="project-tech">{project.techStack}</span>
-                {project.link !== "#" && (
-                  <a href={project.link} target="_blank" rel="noreferrer" className="project-link" aria-label="View Project">
-                    <FiExternalLink size={14} />
-                  </a>
-                )}
               </div>
             </div>
           </div>
