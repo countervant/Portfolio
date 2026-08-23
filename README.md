@@ -68,7 +68,16 @@ Copy the template:
 cp server/.env.example server/.env
 ```
 
-Configure your email credentials in `server/.env`:
+Configure `GEMINI_API_KEY` and your email credentials in `server/.env`:
+
+```env
+GEMINI_API_KEY=your_google_ai_studio_api_key
+GEMINI_MODEL=gemini-3.5-flash-lite
+```
+
+Keep this key on the Express/Lambda backend. Never use a `VITE_` prefix for it, because Vite exposes those variables to the browser.
+
+For the contact form:
 - **Option A: Resend (Recommended)**
   ```env
   EMAIL_PROVIDER=resend
@@ -106,6 +115,38 @@ npm run dev
 ---
 
 ## 📬 Contact Form & API Features
+
+### `POST /api/chat`
+
+Request body:
+
+```json
+{
+  "message": "What is Peejay studying?",
+  "history": [
+    { "role": "user", "content": "What cloud platform does he use?" },
+    { "role": "assistant", "content": "Peejay is building hands-on experience with AWS." }
+  ]
+}
+```
+
+Response body:
+
+```json
+{ "reply": "Peejay is an IT / Web Development student..." }
+```
+
+The route uses the low-latency, stable `gemini-3.5-flash-lite` model by default, validates and caps conversation history, applies a dedicated rate limit, and keeps the Gemini key server-side. You can change the model without editing code through `GEMINI_MODEL`. The floating React widget lives in `client/src/components/PortfolioChatbot/` and is mounted once in `App.jsx`.
+
+> `gemini-2.5-flash` is unavailable to new Gemini API users. Google returns `404 NOT_FOUND` for new projects, so this portfolio assistant uses a current Flash-Lite model.
+
+For production, set `GEMINI_API_KEY` in the Lambda environment and set the frontend build variable to the Function URL without a trailing slash:
+
+```env
+VITE_API_URL=https://your-function-id.lambda-url.region.on.aws
+```
+
+Because Vite embeds environment variables at build time, rebuild and redeploy the S3 assets after changing `VITE_API_URL`. Ensure the Lambda Function URL and Express CORS settings allow `https://peejaydavid.dev` and `https://www.peejaydavid.dev`.
 
 ### 1. `POST /api/contact`
 - **Input Validation**: Ensures valid email format, string sanitization, and reasonable character lengths.

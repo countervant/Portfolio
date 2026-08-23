@@ -13,6 +13,7 @@ const server = app.listen(PORT, () => {
 - Environment: ${process.env.NODE_ENV || 'development'}
 - HealthCheck: http://localhost:${PORT}/api/health
 - Contact API: http://localhost:${PORT}/api/contact
+- Chat API:    http://localhost:${PORT}/api/chat
 =====================================================
   `);
 });

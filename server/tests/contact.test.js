@@ -109,7 +109,71 @@ async function runTests() {
       assert(res.status === 405, 'GET /api/contact returns 405 Method Not Allowed');
     }
 
-    // Test 7: GET /api/unknown-endpoint should return 404
+    // Test 7: POST /api/chat rejects an empty message
+    {
+      const res = await fetch(`${baseUrl}/api/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: '   ', history: [] }),
+      });
+      const data = await res.json();
+      assert(res.status === 400, 'POST /api/chat rejects an empty message');
+      assert(typeof data.error === 'string', 'POST /api/chat validation returns a safe error');
+    }
+
+    // Test 8: POST /api/chat rejects malformed conversation history
+    {
+      const res = await fetch(`${baseUrl}/api/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: 'What is Peejay studying?',
+          history: [
+            { role: 'assistant', content: 'Invalid first turn' },
+            { role: 'user', content: 'Invalid second turn' },
+          ],
+        }),
+      });
+      assert(res.status === 400, 'POST /api/chat rejects history that does not begin with user');
+    }
+
+    // Test 9: POST /api/chat rejects incomplete conversation history
+    {
+      const res = await fetch(`${baseUrl}/api/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: 'Tell me more.',
+          history: [{ role: 'user', content: 'What is Peejay studying?' }],
+        }),
+      });
+      assert(res.status === 400, 'POST /api/chat rejects incomplete history pairs');
+    }
+
+    // Test 10: GET /api/chat should return 405 Method Not Allowed
+    {
+      const res = await fetch(`${baseUrl}/api/chat`);
+      assert(res.status === 405, 'GET /api/chat returns 405 Method Not Allowed');
+    }
+
+    // Test 11: A missing server-side Gemini key fails safely
+    {
+      const previousApiKey = process.env.GEMINI_API_KEY;
+      delete process.env.GEMINI_API_KEY;
+
+      const res = await fetch(`${baseUrl}/api/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: 'What is Peejay studying?', history: [] }),
+      });
+      const data = await res.json();
+      assert(res.status === 503, 'POST /api/chat returns 503 when Gemini is not configured');
+      assert(!JSON.stringify(data).includes('GEMINI_API_KEY'), 'Missing-key response does not expose configuration details');
+
+      if (previousApiKey) process.env.GEMINI_API_KEY = previousApiKey;
+    }
+
+    // Test 12: GET /api/unknown-endpoint should return 404
     {
       const res = await fetch(`${baseUrl}/api/unknown-route-12345`);
       const data = await res.json();
