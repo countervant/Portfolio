@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import contactRoutes from './routes/contactRoutes.js';
+import chatRoutes from './routes/chatRoutes.js';
 import { generalLimiter } from './middleware/rateLimiter.js';
 
 export const createApp = () => {
@@ -71,12 +72,13 @@ export const createApp = () => {
     res.status(200).json({
       name: 'Peejay David Portfolio API',
       status: 'online',
-      documentation: '/api/health or POST /api/contact',
+      documentation: '/api/health, POST /api/contact, or POST /api/chat',
     });
   });
 
   // 6. Routes
   app.use('/api', contactRoutes);
+  app.use('/api', chatRoutes);
 
   // 7. 404 Handler
   app.use((req, res) => {
@@ -92,6 +94,13 @@ export const createApp = () => {
       return res.status(400).json({
         success: false,
         error: 'Malformed JSON payload provided.',
+      });
+    }
+
+    if (err.status === 413 || err.type === 'entity.too.large') {
+      return res.status(413).json({
+        success: false,
+        error: 'Request payload is too large.',
       });
     }
 

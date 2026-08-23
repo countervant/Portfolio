@@ -19,6 +19,20 @@ export const contactLimiter = rateLimit({
 });
 
 /**
+ * Limits AI requests to protect the Gemini API quota from public abuse.
+ */
+export const chatLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 30,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    error: 'Too many chat requests from this IP address. Please try again in 15 minutes.',
+  },
+  statusCode: 429,
+});
+
+/**
  * General API rate limiter.
  * Allows 100 requests per 15 minutes window for standard endpoints (e.g. health checks).
  */

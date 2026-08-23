@@ -8,6 +8,7 @@ import Certifications from './components/Certifications/Certifications';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import BackgroundClouds from './components/BackgroundClouds/BackgroundClouds';
+import PortfolioChatbot from './components/PortfolioChatbot/PortfolioChatbot';
 
 const MoreAbout = lazy(() => import('./components/MoreAbout/MoreAbout'));
 
@@ -102,6 +103,7 @@ function App() {
         )}
       </main>
       <Footer />
+      <PortfolioChatbot />
     </div>
   );
 }
