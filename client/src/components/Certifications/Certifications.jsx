@@ -12,10 +12,13 @@ const Certifications = () => {
         </div>
         
         <div className="cert-list">
-          {certifications.map((cert, index) => (
-            <div className="cert-row" key={index}>
+          {certifications.map((cert) => (
+            <div className="cert-row" key={cert.id}>
               <div className="cert-name">{cert.name}</div>
-              <div className="cert-status">{cert.status}</div>
+              <div className="cert-meta">
+                {cert.date && <span className="cert-date">{cert.date}</span>}
+                <span className="cert-status">{cert.status}</span>
+              </div>
             </div>
           ))}
         </div>

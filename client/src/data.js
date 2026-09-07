@@ -16,7 +16,9 @@ export const skills = {
     "VPC",
     "CloudWatch",
     "Route 53",
-    "Lambda"
+    "Lambda",
+    "Amazon Bedrock",
+    "Amazon SageMaker"
   ],
   cloudAndDevOps: [
     "Linux",
@@ -43,11 +45,17 @@ export const skills = {
 export const certifications = [
   {
     id: 1,
+    name: "AWS Certified AI Practitioner",
+    status: "achieved",
+    date: "September 5, 2026"
+  },
+  {
+    id: 2,
     name: "AWS Certified Cloud Practitioner",
     status: "in progress"
   },
   {
-    id: 2,
+    id: 3,
     name: "AWS Certified Solutions Architect – Associate",
     status: "future goal"
   }

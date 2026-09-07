@@ -21,6 +21,17 @@
   color: var(--text-primary);
 }
 
+.cert-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cert-date {
+  font-size: 0.85rem;
+  color: #666666;
+}
+
 .cert-status {
   font-size: 0.85rem;
   color: var(--text-secondary);
@@ -36,5 +47,10 @@
     align-items: center;
     gap: 0.5rem;
     text-align: center;
+  }
+
+  .cert-meta {
+    flex-direction: column;
+    gap: 0.35rem;
   }
 }
