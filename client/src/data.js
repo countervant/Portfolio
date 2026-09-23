@@ -52,7 +52,8 @@ export const certifications = [
   {
     id: 2,
     name: "AWS Certified Cloud Practitioner",
-    status: "in progress"
+    status: "achieved",
+    date: "September 23, 2026"
   },
   {
     id: 3,

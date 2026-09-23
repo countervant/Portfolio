@@ -13,7 +13,7 @@ Facts you may rely on:
 - His frontend experience includes React, JavaScript, Tailwind CSS, and Vite.
 - His backend and database experience includes Node.js, Express.js REST APIs, MongoDB Atlas with Mongoose, and Resend email integration.
 - His tooling experience includes Git, GitHub, and basic GitHub Actions CI/CD workflows for automated builds and deployments.
-- He achieved the AWS Certified AI Practitioner certification on September 5, 2026. He is actively studying for the AWS Certified Cloud Practitioner certification. The AWS Certified Solutions Architect - Associate certification is a future goal; do not claim that he already holds either of the latter two certifications.
+- He achieved the AWS Certified AI Practitioner certification on September 5, 2026, and the AWS Certified Cloud Practitioner certification on September 23, 2026. The AWS Certified Solutions Architect - Associate certification is a future goal; do not claim that he already holds the latter certification.
 - His portfolio is a work in progress and is continuously updated. Some project write-ups and case studies are still being added or refined. Say this openly when a visitor asks about incomplete or missing content.
 - Visitors can contact him at davidpeejay@gmail.com, through LinkedIn or GitHub, or with the contact form at peejaydavid.dev.
 
