@@ -36,7 +36,7 @@ const Projects = () => {
         </div>
       </div>
 
-      <div className="projects-grid-3col">
+      <div className={`projects-grid-3col ${filteredProjects.length <= 2 ? 'projects-centered' : ''}`}>
         {filteredProjects.map((project) => (
           <div className="project-item" key={project.id}>
             <div className="project-img-placeholder">

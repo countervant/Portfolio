@@ -11,15 +11,15 @@ import {
 import './PortfolioChatbot.css';
 
 const QUICK_PROMPTS = [
-  'What are you studying?',
+  'Tell me about your projects',
   'What tech stack do you use?',
-  'Tell me about this website',
+  'What certifications do you have?',
 ];
 
 const WELCOME_MESSAGE = {
   id: 'welcome',
   role: 'assistant',
-  content: "Hi! I'm Peejay's portfolio assistant. Ask me about his skills, studies, or this website.",
+  content: "Hi! I'm Peejay's portfolio assistant. Ask me about his projects, skills, certifications, or how to contact him.",
   excludeFromHistory: true,
 };
 

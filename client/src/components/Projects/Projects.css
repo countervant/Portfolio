@@ -40,6 +40,11 @@
   gap: 2rem;
 }
 
+.projects-grid-3col.projects-centered {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 460px));
+  justify-content: center;
+}
+
 .project-item {
   display: flex;
   flex-direction: column;
@@ -156,7 +161,8 @@
 }
 
 @media (max-width: 768px) {
-  .projects-grid-3col {
+  .projects-grid-3col,
+  .projects-grid-3col.projects-centered {
     grid-template-columns: 1fr;
   }
   
