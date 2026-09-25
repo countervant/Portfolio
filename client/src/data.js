@@ -74,19 +74,20 @@ export const projects = [
   },
   {
     id: 2,
+    title: "Automated Cloud VPN Gateway & Self-Healing AWS Infrastructure",
+    subtitle: "Production WireGuard VPN appliance and real-time React dashboard hosted on AWS EC2. Features kernel-level Fail2ban brute-force defense, CloudWatch hardware auto-recovery, daily rolling EBS snapshots",
+    techStack: "AWS EC2, EBS, CloudWatch, WireGuard, Nginx, Fail2ban",
+    image: "/images/Project 2.png",
+    link: "https://peejay-vpn.duckdns.org",
+    category: "Cloud"
+  },
+  {
+    id: 3,
     title: "AWS Cloud Cost Intelligence & FinOps Guardrail Dashboard",
     subtitle: "Real-time AWS spend observability, interactive what-if workload forecasting, and automated email guardrails to eliminate cloud bill shock.",
     techStack: "AWS SDK v3, AWS Cost Explorer, CloudWatch, Amazon SNS",
     image: "/images/project-finops-960.v1.webp",
     imageSrcSet: "/images/project-finops-480.v1.webp 480w, /images/project-finops-960.v1.webp 960w",
-    category: "Cloud"
-  },
-  {
-    id: 3,
-    title: "Serverless Application",
-    subtitle: "lambda-based workflow",
-    techStack: "Lambda, API Gateway",
-    image: null,
     category: "Cloud"
   },
   {
