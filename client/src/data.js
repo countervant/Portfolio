@@ -47,18 +47,25 @@ export const certifications = [
     id: 1,
     name: "AWS Certified AI Practitioner",
     status: "achieved",
-    date: "September 5, 2026"
+    date: "September 5, 2026",
+    badge: "/images/Ai practitioner.png",
+    issuer: "Amazon Web Services",
+    link: "https://www.credly.com/badges/8a54d7ab-3f8f-4211-a158-5604703dc2d3"
   },
   {
     id: 2,
     name: "AWS Certified Cloud Practitioner",
     status: "achieved",
-    date: "September 23, 2026"
+    date: "September 23, 2026",
+    badge: "/images/cloud practitioner.png",
+    issuer: "Amazon Web Services",
+    link: "https://www.credly.com/badges/52f54648-0932-453a-8af8-aa4938acfffb"
   },
   {
     id: 3,
     name: "AWS Certified Solutions Architect – Associate",
-    status: "future goal"
+    status: "future goal",
+    issuer: "Amazon Web Services"
   }
 ];
 
